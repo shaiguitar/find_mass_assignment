@@ -86,8 +86,8 @@ module MassAssignment
   # and then run
   # $ chmod +x git/hooks/pre-commit
   def self.find
-    controllers = Dir.glob("#{Rails.root}/app/controllers/**/*_controller.rb")
     exit_status = 0
+    controllers = Dir.glob("#{Rails.root}/app/controllers/**/*_controller.rb")
     controllers.each do |controller|
       if controller.mass_assignment_problem?
         puts "\n#{controller}"
